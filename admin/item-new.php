@@ -12,10 +12,13 @@
 </head>
 
 <body>
-    <h1>helo</h1>
+    <h1>Item Add </h1>
+
     <div class="container">
+        <a href="./item-list.php" class="btn btn-dark back">Back</a>
         <div class="row">
             <div class="col-3"></div>
+
             <div class="col-6 ">
 
 
