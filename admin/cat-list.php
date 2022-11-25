@@ -1,3 +1,6 @@
+<?php
+include './config/auth.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +16,14 @@
 
 <body>
     <h1>Category List</h1>
+    <div class="myContainer bg-danger">
+        <a class="btn btn-danger " href="./item-list.php" role="button"> Manage Items </a>
+        <a class="btn btn-danger " href="./cat-list.php" role="button">
+            Manage Categories
+        </a>
+        <a class="btn btn-danger " href="#" role="button">Manage Orders</a>
+        <a class="btn btn-danger " href="./logout.php" role="button">Logout</a>
+    </div>
     <div class="container">
 
         <div class="row">

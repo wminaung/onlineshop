@@ -1,3 +1,6 @@
+<?php
+include './config/auth.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 

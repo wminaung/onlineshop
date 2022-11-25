@@ -1,5 +1,7 @@
 <?php
 
+include './config/auth.php';
+
 include "./config/config.php";
 
 $id = $_POST['id'];

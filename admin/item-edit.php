@@ -1,4 +1,6 @@
 <?php
+
+include './config/auth.php';
 include('./config/config.php');
 $id = $_GET['id'];
 //$sql = "SELECT items.*, categories.name FROM items LEFT JOIN categories ON items.category_id=categories.id ORDER BY items.reached_date DESC WHERE items.id=$id";

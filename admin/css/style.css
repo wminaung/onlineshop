@@ -14,6 +14,7 @@ h1 {
   background-color: blue;
   padding: 10px;
   color: white;
+  margin: 0;
 }
 
 ul.list {
@@ -78,4 +79,8 @@ ul.list li div {
 
 a.back {
   float: right;
+}
+.myContainer {
+  display: flex;
+  justify-content: space-around;
 }
