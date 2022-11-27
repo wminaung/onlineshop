@@ -8,16 +8,20 @@ if (empty($_SESSION['cart'])) {
 }
 
 
-$count = array_count_values($_SESSION['cart']);
+$cart_arry = array();
+foreach ($_SESSION['cart'] as $id => $qty) {
+    array_push($cart_arry, $id);
+}
 
 
-$uniq_ary = array_unique($_SESSION['cart']);
-$cart_id =  implode(',', $uniq_ary);
+$cart_id = implode(',', $cart_arry);
 
 $item_result =  mysqli_query($conn, "SELECT * FROM items WHERE id IN ($cart_id)");
 
-
 $total_price = 0;
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -94,7 +98,13 @@ $total_price = 0;
                                     <?php
                                     while ($item = mysqli_fetch_assoc($item_result)) {
                                         $item_id = $item['id'];
-                                        $quantity = $count[$item_id];
+                                        $quantity = 0;
+
+                                        foreach ($_SESSION['cart'] as $id => $qty) {
+                                            if ($item_id == $id) {
+                                                $quantity = $qty;
+                                            }
+                                        }
 
 
                                     ?>
@@ -103,7 +113,7 @@ $total_price = 0;
                                                 <div class="media align-items-center">
                                                     <img src="./admin/images/<?php echo $item['photo'] ?>" class="d-block ui-w-40 ui-bordered mr-4" alt="Item">
                                                     <div class="media-body">
-                                                        <a href="#" class="d-block text-dark"><?php echo $item['title'] ?></a>
+                                                        <span class="d-block text-dark"><?php echo $item['title'] ?></span>
 
                                                     </div>
                                                 </div>
@@ -114,13 +124,13 @@ $total_price = 0;
                                             <td class="text-right font-weight-semibold align-middle p-4"><?php echo $item['price'] ?>
                                             </td>
 
-                                            <td class="align-middle p-4">
-                                                <input type="text" class="form-control text-center" value="<?php echo $quantity; ?>">
+                                            <td class="align-middle p-4 text-center">
+                                                <?php echo $quantity; ?>
                                             </td>
                                             <td class="text-right font-weight-semibold align-middle p-4">
                                                 <?php echo $item['price'] * $quantity ?>
                                             </td>
-                                            <td class="text-center align-middle px-0"><a href="./addtocart.php?remove_id=<?php echo $item['id'] ?>" class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove"><i class="fa fa-trash fs-4" aria-hidden="true"></i></a></td>
+                                            <td class="text-center align-middle px-0"><a href="./remove_cart.php?id=<?php echo $item['id'] ?>" class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove"><i class="fa fa-trash fs-4" aria-hidden="true"></i></a></td>
                                         </tr>
                                     <?php
                                         $total_price += $item['price'] * $quantity;
@@ -174,7 +184,7 @@ $total_price = 0;
                                     <input type="text" name='address' id='address' class="form-control">
                                 </div>
 
-                                <a href="./index.php" type="button" class="btn btn-lg btn-default md-btn-flat mt-2 mr-3">
+                                <a href="./index.php" type="button" class="btn btn-lg btn-secondary md-btn-flat mt-2 mr-3">
                                     Back to shopping
                                 </a>
 

@@ -25,6 +25,7 @@ h1 {
 }
 body {
   background-color: #000;
+  user-select: none;
 }
 .card {
   border: none;
@@ -85,4 +86,11 @@ label.radio input:checked + span {
 }
 .cart i {
   margin-right: 10px;
+}
+
+.deep-red {
+  color: #da0606 !important;
+}
+.deep-red-bg {
+  background-color: #da0606 !important;
 }

@@ -8,6 +8,7 @@ body {
   border: 2px solid goldenrod;
   font-family: Arial, Helvetica, sans-serif;
   margin: 30px auto;
+  user-select: none;
 }
 
 h1 {
@@ -83,4 +84,55 @@ a.back {
 .myContainer {
   display: flex;
   justify-content: space-around;
+}
+
+/***********/
+
+li,
+ul,
+li.delivered {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+li,
+li.delivered {
+  width: 90% !important;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  margin: 14px 0px !important;
+}
+
+.order {
+  width: 45% !important;
+  height: 100% !important;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.items {
+  width: 45%;
+  display: flex !important;
+  height: 100% !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+}
+
+.delivered {
+  color: gray;
+}
+
+.delivered a {
+  color: black;
+  text-decoration-color: black;
 }

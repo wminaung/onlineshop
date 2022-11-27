@@ -21,7 +21,7 @@ include './config/auth.php';
         <a class="btn btn-danger " href="./cat-list.php" role="button">
             Manage Categories
         </a>
-        <a class="btn btn-danger " href="#" role="button">Manage Orders</a>
+        <a class="btn btn-danger " href="./orders.php" role="button">Manage Orders</a>
         <a class="btn btn-danger " href="./logout.php" role="button">Logout</a>
     </div>
     <div class="container">
@@ -50,7 +50,7 @@ include './config/auth.php';
                             [ <a href="./cat-edit.php?id=<?php echo $row['id'] ?>" class="edit">
                                 edit
                             </a>]
-                            <?php echo $row['name']; ?>
+                            <i><b><?php echo $row['name']; ?></b></i>
                         </li>
 
 

@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (isset($_SESSION['auth'])) {
+    header("location:./item-list.php");
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

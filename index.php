@@ -1,6 +1,6 @@
 <?php
 include("./admin/config/config.php");
-
+session_start();
 $cat_result = mysqli_query($conn, "SELECT * FROM categories");
 
 
@@ -90,8 +90,26 @@ if (!empty($_GET['id'])) {
             </div>
         </div>
         <div class="row">
-            <div class="foo p-1 text-end">
-                <a href="./view-cart.php" class="text-decoration-none  btn btn-success btn-sm"> <i class="fa fa-shopping-cart text-danger fs-6"></i> View Cart</a>
+            <div class="foo py-2 text-end">
+                <a href="./view-cart.php" class="me-3 btn btn-success btn-sm position-relative">
+                    <?php
+                    if (!empty($_SESSION['cart'])) {
+                        $cart_qty = 0;
+                        foreach ($_SESSION['cart'] as $key => $value) {
+                            $cart_qty += $value;
+                        }
+                        if ($cart_qty > 99) {
+                            $cart_qty = "99+";
+                        }
+
+                    ?>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill deep-red-bg">
+                            <?php echo $cart_qty ?>
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+
+                    <?php } ?>
+                    <i class="fa fa-shopping-cart fs-6 deep-red"></i> View Cart</a>
             </div>
             <div class="footer bg-secondary text-center">
                 &copy; . All Right Reserved <?php echo date("Y"); ?>

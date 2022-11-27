@@ -34,7 +34,7 @@ $result  = mysqli_query($conn, $sql);;
         <a class="btn btn-danger " href="./cat-list.php" role="button">
             Manage Categories
         </a>
-        <a class="btn btn-danger " href="#" role="button">Manage Orders</a>
+        <a class="btn btn-danger " href="./orders.php" role="button">Manage Orders</a>
         <a class="btn btn-danger " href="./logout.php" role="button">Logout</a>
     </div>
     <div class="container">
@@ -49,7 +49,7 @@ $result  = mysqli_query($conn, $sql);;
                             <img style="float: right" src="./images/<?php echo $row['photo'] ?>" alt="Img" width="100px" />
                             <b><?php echo $row['title']; ?></b>
                             <i><?php echo $row['brand']; ?></i>
-                            <small>(in
+                            <small>(in-
                                 <?php echo $row['name']; ?>)</small>
                             <span>$<?php echo $row['price']; ?></span>
                             <div>

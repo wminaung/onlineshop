@@ -30,9 +30,9 @@ $row = mysqli_fetch_assoc($result);
 </head>
 
 <body>
-    <h1>Item Edit</h1>
+    <h1>Item Edit <a href="./item-list.php" class="btn btn-dark back">Back</a></h1>
     <div class="container">
-        <a href="./item-list.php" class="btn btn-dark back">Back</a>
+
         <div class="row">
             <div class="col-3"></div>
             <div class="col-6 ">
@@ -59,7 +59,7 @@ $row = mysqli_fetch_assoc($result);
                     <div class="mb-3">
                         <label for="category" class="form-label">Item Category</label>
                         <select name="category_id" class="form-select" id="category">
-                            <option>Open this select menu</option>
+
                             <?php
                             include('./config/config.php');
                             $sql = "SELECT * FROM categories";

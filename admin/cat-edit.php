@@ -1,5 +1,6 @@
 <?php
 include './config/auth.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,9 +18,9 @@ include './config/auth.php';
 </head>
 
 <body>
-    <h1 class="text-center">Edit Category</h1>
+    <h1 class="">Edit Category <a href="./cat-list.php" class="btn btn-dark back">Back</a></h1>
     <div class="container">
-        <a href="./cat-list.php" class="btn btn-dark back">Back</a>
+
         <div class="row">
             <div class="col-3"></div>
             <div class="col-6 ">
