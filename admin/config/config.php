@@ -2,7 +2,7 @@
 $my = "hey i am win";
 $dbhost = "localhost";
 $dbuser = "root";
-$dbpassword = "password";
+$dbpassword = "";
 $dbname = "onlineshopping";
 
 $conn = mysqli_connect($dbhost, $dbuser, $dbpassword);
