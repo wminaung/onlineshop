@@ -2,7 +2,7 @@ check sql dump file form < /sql > folder
 create your own database LOL
 create tables like my table structure or just dosomething
 
-## if you done for data thing
+## if you done your database thing
 
 go admin page -- /onlineshop/admin <or> /onlineshop/admin/index.php
 
@@ -10,7 +10,7 @@ go admin page -- /onlineshop/admin <or> /onlineshop/admin/index.php
 
 ```
 username : admin
-password : password
+password : admin
 
 ```
 
